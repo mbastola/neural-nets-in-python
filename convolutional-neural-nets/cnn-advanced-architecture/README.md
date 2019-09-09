@@ -27,13 +27,14 @@ Another motivation is to imporove on the Facial Recognition result from the [cnn
 
 ## FER2013 Binary
 
-Applying CNN with architecture defined by ARCH, the 2 class Facial Emotion FER2013 dataset result has significantly improved, decreasing test error from 36% to 13.6% leading to accuracy of 86.4%!
+Applying CNN with architecture defined by ARCH, the 2 class Facial Emotion FER2013 dataset result has significantly improved, decreasing test error from 36% to 13.6% leading to accuracy of 86.4%! 
 
 ![png](imgs/Fer2013_binary.png)
 
 *Left: Losses, Right: training_error_rate*
 
 training error_rate:  0.112
+
 test error: 0.1357142857142857
 
 Confusion Matrix:
@@ -54,7 +55,7 @@ Classification Report:
 
 ## FER2013 7 classes
 
-Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER2013 dataset has test error of 41.7% (accuracy 58.22%). The leading Kaggle score for this dataset has accuracy of 69.7% [link](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).
+Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER2013 dataset has test error of 41.7% (accuracy 58.22%). The leading Kaggle score for this dataset has accuracy of 69.7%. [link](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).
 
 
 ![png](imgs/CNN_fer2013_1567816355.png)
@@ -82,10 +83,10 @@ Classification Report:
            0       0.62      0.48      0.54        54
 	   1       1.00      0.67      0.80         3
 	   2       0.44      0.45      0.45        55
-           3       0.70      0.74      0.72        87
+	   3       0.70      0.74      0.72        87
 	   4       0.42      0.44      0.43        50
 	   5       0.75      0.80      0.78        41
-           6       0.53      0.54      0.53        69
+	   6       0.53      0.54      0.53        69
 
 	accuracy                           0.58       359
 	macro avg       0.64      0.59      0.61       359
@@ -94,13 +95,14 @@ Classification Report:
 
 ## MNIST:
 
-Applying CNN with architecture defined by ARCH, the 10 class handwritten digit MNIST dataset has test error of 1.2% (accuracy 98.8% !!). The leading score for this dataset has accuracy of 99.8% and looks like ARCH ranks around 46th![link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html).
+Applying CNN with architecture defined by ARCH, the 10 class handwritten digit MNIST dataset has test error of 1.2% (accuracy 98.8% !!). The leading score for this dataset has accuracy of 99.8% and looks like ARCH ranks around 46th! [link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html).
 
 ![png](imgs/CNN_mnist.png)
 
 *Left: Losses, Right: training_error_rate*
 
 training error_rate:  0.017
+
 test error: 0.012857142857142857
 
 Confusion Matrix:
@@ -146,6 +148,7 @@ Applying CNN with architecture defined by ARCH, the 10 class 3 channel images CI
 
 
 training error_rate:  0.181
+
 test error: 0.18
 
 Confusion Matrix:
@@ -186,6 +189,7 @@ Classification Report:
 Unfortunately performance of ARCH in 100 class CIFAR dataset was terrible (99.1%). The issue was non-convergence of the training error rate which can be seen below. The architecture needs modification here in order to account for an order of magnitude increase in labels which is going to be one of the datasets to tackle in "cnn-learning-architecture" topic. Stay tuned!
 
 ![png](imgs/CNN_cifar100.png)
+
 *Left: Losses, Right: training_error_rate*
 
 
