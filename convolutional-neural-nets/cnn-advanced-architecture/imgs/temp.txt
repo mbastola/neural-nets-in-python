@@ -1,0 +1,39 @@
+i: 0 j: 20 nb: loss: 14.649194 error rate: 0.348
+{1} 1
+i: 1 j: 20 nb: loss: 6.9671583 error rate: 0.334
+{0, 1} 2
+i: 2 j: 20 nb: loss: 4.895073 error rate: 0.33
+{0, 1} 2
+i: 3 j: 20 nb: loss: 3.8904352 error rate: 0.309
+{0, 1} 2
+i: 4 j: 20 nb: loss: 3.1795502 error rate: 0.273
+{0, 1} 2
+i: 5 j: 20 nb: loss: 2.6936226 error rate: 0.253
+{0, 1} 2
+i: 6 j: 20 nb: loss: 2.2055516 error rate: 0.154
+{0, 1} 2
+i: 7 j: 20 nb: loss: 1.9070809 error rate: 0.151
+{0, 1} 2
+i: 8 j: 20 nb: loss: 1.6802697 error rate: 0.151
+{0, 1} 2
+i: 9 j: 20 nb: loss: 1.4808148 error rate: 0.131
+{0, 1} 2
+i: 10 j: 20 nb: loss: 1.3131778 error rate: 0.138
+{0, 1} 2
+i: 11 j: 20 nb: loss: 1.1761653 error rate: 0.113
+{0, 1} 2
+i: 12 j: 20 nb: loss: 1.0606042 error rate: 0.123
+{0, 1} 2
+i: 13 j: 20 nb: loss: 0.9627966 error rate: 0.11
+{0, 1} 2
+i: 14 j: 20 nb: loss: 0.8880036 error rate: 0.116
+{0, 1} 2
+i: 15 j: 20 nb: loss: 0.855474 error rate: 0.124
+{0, 1} 2
+i: 16 j: 20 nb: loss: 0.79419124 error rate: 0.133
+{0, 1} 2
+i: 17 j: 20 nb: loss: 0.743485 error rate: 0.108
+{0, 1} 2
+i: 18 j: 20 nb: loss: 0.6992594 error rate: 0.104
+{0, 1} 2
+i: 19 j: 20 nb: loss: 0.69259393 error rate: 0.112
