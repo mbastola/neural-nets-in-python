@@ -3,7 +3,7 @@
 In this repo, I made advancements to the CNN class I worked in [cnn-learning-hyper-params](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) repo. The motivation is to be able to build a CNN class that is flexible to architecture changes. For example, the CNN class in this repo reads its architecture from Json object. For example,
 
 
-ARCH = [
+	ARCH = [
         {'type':'C','activation':'relu','num_output':64,'kernel_size': (3,3), 'stride': (1,1), 'drop_out': 0.0},
         {'type':'C','activation':'relu','num_output':128,'kernel_size': (3,3), 'stride': (1,1), 'drop_out': 8.3},
         {'type':'P','pool':'max','kernel_size': (2,2), 'stride': (2,2), 'drop_out': 16.7},
@@ -14,11 +14,11 @@ ARCH = [
         {'type':'FC','activation':'relu','num_output':256,'drop_out': 8.3},
         {'type':'FC','activation':'relu','num_output':128,'drop_out': 0.0}, 
         {'type':'T','activation':None}
-    ] 
+    	] 
 
 builds the CNN with layers:
 
-Conv -> Relu+Dropout -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Fully Connected -> Relu+Dropout -> Fully_Connected -> Relu -> Catergorical_Cross_Entropy
+	Conv -> Relu+Dropout -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Fully Connected -> Relu+Dropout -> Fully_Connected -> Relu -> Catergorical_Cross_Entropy
 
 
 The goal is to utilize this dynamic architecture in my next repo [cnn-learning-architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-architecture) where I plan to use Reinforcement Learning to learn the architecture params.
@@ -30,6 +30,7 @@ Another motivation is to imporove on the Facial Recognition result from the [cnn
 Applying CNN with architecture defined by ARCH, the 2 class Facial Emotion FER2013 dataset result has significantly improved, decreasing test error from 36% to 13.6% leading to accuracy of 86.4%!
 
 ![png](imgs/Fer2013_binary.png)
+
 *Left: Losses, Right: training_error_rate*
 
 training error_rate:  0.112
@@ -57,6 +58,7 @@ Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER20
 
 
 ![png](imgs/CNN_fer2013_1567816355.png)
+
 *Left: Losses, Right: training_error_rate*
 
 
@@ -95,6 +97,7 @@ Classification Report:
 Applying CNN with architecture defined by ARCH, the 10 class handwritten digit MNIST dataset has test error of 1.2% (accuracy 98.8% !!). The leading score for this dataset has accuracy of 99.8% and looks like ARCH ranks around 46th![link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html).
 
 ![png](imgs/CNN_mnist.png)
+
 *Left: Losses, Right: training_error_rate*
 
 training error_rate:  0.017
@@ -138,6 +141,7 @@ Applying CNN with architecture defined by ARCH, the 10 class 3 channel images CI
 
 
 ![png](imgs/CNN_cifar10.png)
+
 *Left: Losses, Right: training_error_rate*
 
 
@@ -146,16 +150,16 @@ test error: 0.18
 
 Confusion Matrix:
 
-[[56  1  3  0  0  0  0  2  1  2]
- [ 0 61  0  1  0  0  1  0  0  4]
- [ 1  1 44  2  7  0  1  0  1  0]
- [ 1  0  5 33  3  9  1  3  0  1]
- [ 0  0  6  1 45  3  2  2  0  0]
- [ 0  0  0  6  0 30  4  2  0  0]
- [ 0  1  4  2  3  0 55  0  0  0]
- [ 1  0  0  0  3  2  0 62  0  0]
- [ 3  4  1  1  0  0  0  0 59  1]
- [ 1  3  0  1  0  1  0  0  1 45]]
+	[[56  1  3  0  0  0  0  2  1  2]
+ 	[ 0 61  0  1  0  0  1  0  0  4]
+ 	[ 1  1 44  2  7  0  1  0  1  0]
+ 	[ 1  0  5 33  3  9  1  3  0  1]
+ 	[ 0  0  6  1 45  3  2  2  0  0]
+ 	[ 0  0  0  6  0 30  4  2  0  0]
+ 	[ 0  1  4  2  3  0 55  0  0  0]
+ 	[ 1  0  0  0  3  2  0 62  0  0]
+ 	[ 3  4  1  1  0  0  0  0 59  1]
+	[ 1  3  0  1  0  1  0  0  1 45]]
 
 Classification Report:
 
@@ -173,8 +177,8 @@ Classification Report:
          9.0       0.85      0.87      0.86        52
 
     accuracy                           0.82       600
-   macro avg       0.81      0.81      0.81       600
-weighted avg       0.82      0.82      0.82       600
+    macro avg       0.81      0.81      0.81       600
+    weighted avg       0.82      0.82      0.82       600
 
 
 ## CIFAR 100
