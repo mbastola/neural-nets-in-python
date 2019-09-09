@@ -1,10 +1,9 @@
 # CNN Advanced Architecture
 
-In this repo, I made advancements to the CNN class I worked in "cnn-learning-hyper-params" repo. The motivation is to be able to build a CNN class that is flexible to architecture changes. For example, the CNN class in this repo reads its architecture from Json object. For example,
+In this repo, I made advancements to the CNN class I worked in [cnn-learning-hyper-params](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) repo. The motivation is to be able to build a CNN class that is flexible to architecture changes. For example, the CNN class in this repo reads its architecture from Json object. For example,
 
-|:--:| 
 
-| ARCH = [
+ARCH = [
         {'type':'C','activation':'relu','num_output':64,'kernel_size': (3,3), 'stride': (1,1), 'drop_out': 0.0},
         {'type':'C','activation':'relu','num_output':128,'kernel_size': (3,3), 'stride': (1,1), 'drop_out': 8.3},
         {'type':'P','pool':'max','kernel_size': (2,2), 'stride': (2,2), 'drop_out': 16.7},
@@ -15,25 +14,22 @@ In this repo, I made advancements to the CNN class I worked in "cnn-learning-hyp
         {'type':'FC','activation':'relu','num_output':256,'drop_out': 8.3},
         {'type':'FC','activation':'relu','num_output':128,'drop_out': 0.0}, 
         {'type':'T','activation':None}
-    ] |
-
-|:--:| 
+    ] 
 
 builds the CNN with layers:
 
-| Conv -> Relu+Dropout -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Fully Connected -> Relu+Dropout -> Fully_Connected -> Relu -> Catergorical_Cross_Entropy |
+Conv -> Relu+Dropout -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Conv -> Relu+Dropout -> Max_pool -> Conv -> Relu -> Fully Connected -> Relu+Dropout -> Fully_Connected -> Relu -> Catergorical_Cross_Entropy
 
 
-The goal is to utilize this dynamic architecture in my next repo "cnn-learning-architecture" where I plan to use Reinforcement Learning to learn the architecture params.
+The goal is to utilize this dynamic architecture in my next repo [cnn-learning-architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-architecture) where I plan to use Reinforcement Learning to learn the architecture params.
 
-Another motivation is to imporove on the Facial Recognition result from the "cnn-learning-hyper-params"[a "cnn-learning-hyper-params" link](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) repo. There we were stuck with 36% test error for binary class FER2013 dataset. For the architecture above, we have improved on the dataset while also tested the result on MNIST and CIFAR.
+Another motivation is to imporove on the Facial Recognition result from the [cnn-learning-hyper-params](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) repo. There we were stuck with 36% test error for binary class FER2013 dataset. For the architecture above, we have improved on the dataset while also tested the result on MNIST and CIFAR.
 
 ## FER2013 Binary
 
 Applying CNN with architecture defined by ARCH, the 2 class Facial Emotion FER2013 dataset result has significantly improved, decreasing test error from 36% to 13.6% leading to accuracy of 86.4%!
 
 ![png](imgs/Fer2013_binary.png)
-{:.image-caption}
 *Left: Losses, Right: training_error_rate*
 
 training error_rate:  0.112
@@ -57,11 +53,10 @@ Classification Report:
 
 ## FER2013 7 classes
 
-Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER2013 dataset has test error of 41.7% (accuracy 58.22%). The leading Kaggle score for this dataset has accuracy of 69.7% [a link](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).
+Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER2013 dataset has test error of 41.7% (accuracy 58.22%). The leading Kaggle score for this dataset has accuracy of 69.7% [link](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).
 
 
 ![png](imgs/CNN_fer2013_1567816355.png)
-{:.image-caption}
 *Left: Losses, Right: training_error_rate*
 
 
@@ -97,10 +92,9 @@ Classification Report:
 
 ## MNIST:
 
-Applying CNN with architecture defined by ARCH, the 10 class handwritten digit MNIST dataset has test error of 1.2% (accuracy 98.8% !!). The leading score for this dataset has accuracy of 99.8% and looks like ARCH ranks around 46th![a link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html).
+Applying CNN with architecture defined by ARCH, the 10 class handwritten digit MNIST dataset has test error of 1.2% (accuracy 98.8% !!). The leading score for this dataset has accuracy of 99.8% and looks like ARCH ranks around 46th![link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html).
 
 ![png](imgs/CNN_mnist.png)
-{:.image-caption}
 *Left: Losses, Right: training_error_rate*
 
 training error_rate:  0.017
@@ -140,11 +134,10 @@ Classification Report:
 
 ## CIFAR 10
 
-Applying CNN with architecture defined by ARCH, the 10 class 3 channel images CIFAR dataset has test error of 18% (accuracy 88% !!). The leading score for this dataset has accuracy of 96.53% and looks like ARCH ranks around 34th! [a link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#43494641522d3130).
+Applying CNN with architecture defined by ARCH, the 10 class 3 channel images CIFAR dataset has test error of 18% (accuracy 88% !!). The leading score for this dataset has accuracy of 96.53% and looks like ARCH ranks around 34th! [link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#43494641522d3130).
 
 
 ![png](imgs/CNN_cifar10.png)
-{:.image-caption}
 *Left: Losses, Right: training_error_rate*
 
 
@@ -189,7 +182,6 @@ weighted avg       0.82      0.82      0.82       600
 Unfortunately performance of ARCH in 100 class CIFAR dataset was terrible (99.1%). The issue was non-convergence of the training error rate which can be seen below. The architecture needs modification here in order to account for an order of magnitude increase in labels which is going to be one of the datasets to tackle in "cnn-learning-architecture" topic. Stay tuned!
 
 ![png](imgs/CNN_cifar100.png)
-{:.image-caption}
 *Left: Losses, Right: training_error_rate*
 
 
