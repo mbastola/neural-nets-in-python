@@ -8,28 +8,40 @@ import random
 from utils import *
 from sklearn.utils import shuffle
 import numpy as np
+import matplotlib.pyplot as plt
 
 class ANN(object):
 
     def __init__(self, layer_sizes):
         self.num_layers = len(layer_sizes)
         self.sizes = layer_sizes
-        self.biases = [np.random.randn(x, 1) for x in layer_sizes[1:]]
-        self.weights = [(np.random.randn(y, x))/np.sqrt(x) for x, y in zip(layer_sizes[:-1], layer_sizes[1:])]
-
+        self.biases = None
+        self.weights = None
+        
+    def build(self):
+        self.biases = [np.random.randn(x, 1) for x in self.sizes[1:]]
+        self.weights = [(np.random.randn(y, x))/np.sqrt(x) for x, y in zip(self.sizes[:-1], self.sizes[1:])]
+    
     def forward(self, X):
         for b, w in zip(self.biases, self.weights):
             X = sigmoid(np.dot(w, X)+b)
         return X
 
-    def fit(self, X, Y, batch_size, epochs, lr):
+    def fit(self, X, Y, batch_size, epochs, lr, debug):
         """Using mini-batch SGD"""
+
         n_valid = 1000
         X,Y = shuffle(X,Y)
         Xvalid, Yvalid = X[-1000:], Y[-1000:]
         X, Y = X[:-1000], Y[:-1000]
-        n = len(X)
+        n,f,_ = X.shape
+        #get num features from input
+        self.sizes[0] = f
+        #initiate weights and biases
+        self.build()
         
+        losses = []
+        train_errors = []
         for j in range(epochs):
             X,Y = shuffle(X,Y)
             mini_batches = []
@@ -41,7 +53,18 @@ class ANN(object):
             #validate
             Ypred = self.predict(Xvalid)
             error_valid = error_rate(oneHotDecoder(Yvalid), oneHotDecoder(Ypred))
-            print("Epoch {0}: {1}".format(j, error_valid*100))
+            train_errors.append(error_valid)
+            if debug:
+                print("Epoch {0}: {1}".format(j, error_valid*100))
+        if debug:
+            #fig, axes = plt.subplots(nrows=1,ncols=2) 
+            #axes[0].plot(losses)
+            #axes[1].plot(train_errors)
+            #plt.tight_layout()
+            #plt.show()
+            plt.plot(train_errors)
+            plt.savefig("imgs/ann1-errors.png")
+        print ('\n training error_rate: ', train_errors[-1])
             
     def mini_batch_sgd(self, X_batch, Y_batch, lr):
         """Update the network's weights and biases by applying gradient descent using backpropagation to a single mini batch."""
@@ -51,7 +74,7 @@ class ANN(object):
             #print(x.shape)
             #print(y)
             #input()
-            x = np.reshape(x, (784, 1))
+            #x = np.reshape(x, (784, 1))
             delta_nabla_b, delta_nabla_w = self.backprop(x, y)
             nabla_b = [nb+dnb for nb, dnb in zip(nabla_b, delta_nabla_b)]
             nabla_w = [nw+dnw for nw, dnw in zip(nabla_w, delta_nabla_w)]

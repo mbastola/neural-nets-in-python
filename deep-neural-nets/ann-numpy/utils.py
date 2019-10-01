@@ -6,8 +6,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-
-
 def sigmoid(z):
     return 1.0/(1.0+np.exp(-z))
 
