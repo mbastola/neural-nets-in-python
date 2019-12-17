@@ -1,10 +1,10 @@
-# Artifical neural network in Numpy
+# Artifical neural network in TF
 
 In this repo, I build ANNs using tensorflow and an extension to ann-numpy repo where I build ANN architecture from scratch and write Backpropagation. 
 
 ## MNIST:
 
-Our numpy ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten digit MNIST dataset achieves test error of 4.4% (accuracy 95.6% !!). 
+Our numpy ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten digit MNIST dataset achieves test error of 3.4% (accuracy 96.6% !!). 
 
 ![png](imgs/ANN_mnist10.png)
 
