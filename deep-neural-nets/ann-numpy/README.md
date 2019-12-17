@@ -10,12 +10,12 @@ Our numpy ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten d
 
 *training_error_rate*
 
-training error_rate:  0.03
+final training error:  0.03
 
 test error: 0.04428571428571428
 
 Confusion Matrix:
-
+```
 [[67  0  0  0  0  0  2  0  0  0]
  [ 0 78  0  0  0  0  0  0  0  0]
  [ 1  0 60  0  1  0  1  1  0  0]
@@ -26,10 +26,11 @@ Confusion Matrix:
  [ 0  1  0  0  0  0  0 65  0  1]
  [ 1  0  1  1  1  0  1  0 65  0]
  [ 1  0  0  0  1  0  0  2  1 65]]
-
+```
 
 Classification Report:
 
+```
                  precision    recall  f1-score   support
 
          0.0       0.94      0.97      0.96        69
@@ -46,7 +47,8 @@ Classification Report:
     accuracy                           0.96       700
    macro avg       0.96      0.96      0.96       700
 weighted avg       0.96      0.96      0.96       700
-               
+
+```            
 
 ## CIFAR 10
 
@@ -58,12 +60,13 @@ For 10 class 3 channel images CIFAR dataset we try deeper archecture with 3 hidd
 *training_error_rate*
 
 
-training error_rate: 0.577
+final training error: 0.577
 
 test error: 0.5316666666666666
 
 Confusion Matrix:
 
+```
 [[33  2  1  4  0  3  3  7 10  2]
  [ 0 38  0  3  0  0  3  2  6 15]
  [ 5  1  7  7  2  3 14 17  0  1]
@@ -74,9 +77,10 @@ Confusion Matrix:
  [ 3  1  1  4  6  3  3 43  0  4]
  [ 6  1  1  5  0  1  1  6 36 12]
  [ 0  4  0  2  1  1  2  4  5 33]]
-
+```
 Classification Report:
 
+```
               precision    recall  f1-score   support
 
          0.0       0.60      0.51      0.55        65
@@ -94,6 +98,4 @@ Classification Report:
    macro avg       0.46      0.45      0.44       600
 weighted avg       0.48      0.47      0.45       600
 
-
-
-
+```
