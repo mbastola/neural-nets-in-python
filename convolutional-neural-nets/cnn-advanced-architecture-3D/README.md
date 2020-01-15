@@ -3,14 +3,14 @@
 
 In this repo, I extend my [CNN Advanced Architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture) project to 3D space. The architecture is advanced in the sense that it is flexible and can read & build its architecture from JSON files. The 3D extension allows CNN3D classifier to tackle 3D image tensors such as CT Scan images, which we will we working with in this repo. I have trained the LUNA16 dataset with the usual my CNN and then with CNN3D classes and noted that CNN3D outperfromed the predictions for the LUNA16 dataset.  
 
-## LUNA16:
+## LUNA16
 LUng Nodule Analysis data includes 888 CT Scans of Lungs with Annotations around the possible cancer region. The annotations are provided by multiple radiologistss and the detections are in binary +ve and -ve classess with specified region of interest, thickness, etc. in the metadata files. The information about the dataset can be found [here](https://luna16.grand-challenge.org). 
 
-## Data Exploration:
+## Data Exploration
 
+Out of total of 551065 annotations, only 1351 were labeled as nodules. We downsample the negative examples heavily to reach -ve to +ve ratio of 0.2. We will then upsample the +ve examples by rotating the images. Hence, we first balance classes to improve on the accuracy of binary classficiation since the naive accuracy will lead to high FNR. More important, the Recall rate is crucial in the classification of serious illness of cancer for a false negative will be fatal. Hence we will be keeping eye on the Recall rates throughout.
 
-Our goal is to improve on the accuracy of binary classficiation. However, since the class is highly imbalanced, naive focus on accuracy will lead to high FNR. More important, the Recall rate is crucial in the classification of serious illness of cancer for a false negative will be fatal. Hence we will be keeping eye on the Recall rate here.
-
+The images are in .raw formats with metadata given in the .mhd files. Pythons has SimpleITK library that opens the raw files easily. Kudos to [this](https://github.com/swethasubramanian/LungCancerDetection/blob/master/src/data/create_images.py) repo for providing the baseline code. Once the file is read, the image can be seen as having shape: 
 
 
 ```python
@@ -19,12 +19,8 @@ Read mhd data
 """
 filename = "subset6/1.3.6.1.4.1.14519.5.2.1.6279.6001.669435869708883155232318480131.mhd"
 path = glob.glob(filename)
-ds = sitk.ReadImage(path[0])
-image = sitk.GetArrayFromImage(ds)
-```
-
-
-```python
+metadata = sitk.ReadImage(path[0])
+image = sitk.GetArrayFromImage(metadata)
 image.shape
 ```
 
@@ -35,31 +31,15 @@ image.shape
 
 
 
-```python
-low_res = down_sample(image)
-plot_3d(low_res,150)
-```
 
-
-![png](imgs/output_5_0.png)
-
-
+There are 130 slices of 512 sq pixel CTScan Image on the file above. The number of slices are different for each file which is an issue for CNN3D. We will need to resample into uniform slices. Each slice can be seen as:
 
 ```python
 plt.imshow(image[0],cmap='gray')
 ```
-
-
-
-
-    <matplotlib.image.AxesImage at 0x7fdc3d9c8b70>
-
-
-
-
 ![png](imgs/output_6_1.png)
 
-
+The first 12 slices are observed:
 
 ```python
 ## the 3d image slices
@@ -73,14 +53,17 @@ plt.show()
 
 ![png](imgs/output_7_0.png)
 
+We can use matplotlib to plot all the 130 slices into 3d scatterplot:
+![png](imgs/output_5_0.png)
 
 
+Since the annotations are provided, we wont need the entire CTScan region. We compute the ROI,crop the images and output the final numpy array in ```CTSData.py```. The output can be observed: 
 ```python
 ##load 3d data 
 X_test_3d = np.load("./test_imdata.npy") 
 ```
 
-
+Here the unformly sampled (eps=10) 64x64 CTScan images is shown
 ```python
 ## the 3d image slices of annotated ROI (shape 64x64x10)
 X_test_candidate =  X_test_3d[0,:,:]
@@ -96,6 +79,12 @@ plt.show()
 
 ![png](imgs/output_11_0.png)
 
+Below shows 2 +ve samples of Nodules in depth frames. Note that the Nodule appears & disappreas with the depth:
+
+<div>
+<img src="imgs/1.gif" width="200">
+<img src="imgs/5.gif" width="200">
+</div>
 
 
 ```python
@@ -113,8 +102,6 @@ plt.show()
 
 
 ![png](imgs/output_13_0.png)
-
-
 
 ## Classification Results:
 
