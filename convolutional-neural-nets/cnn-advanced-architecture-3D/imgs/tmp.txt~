@@ -1,0 +1,90 @@
+(6471, 64, 64, 1)
+(1619, 64, 64, 1)
+6471 2
+{'type': 'C', 'activation': 'relu', 'num_output': 64, 'kernel_size': (3, 3), 'stride': (1, 1), 'drop_out': 8.3, 'depth': 0, 'num_input': 1}
+{'type': 'P', 'pool': 'max', 'kernel_size': (2, 2), 'stride': (2, 2), 'drop_out': 16.7, 'depth': 1}
+{'type': 'C', 'activation': 'relu', 'num_output': 128, 'kernel_size': (3, 3), 'stride': (1, 1), 'drop_out': 0.0, 'depth': 2, 'num_input': 64}
+{'type': 'C', 'activation': 'relu', 'num_output': 64, 'kernel_size': (5, 5), 'stride': (1, 1), 'drop_out': 16.7, 'depth': 3, 'num_input': 128}
+{'type': 'P', 'pool': 'max', 'kernel_size': (5, 5), 'stride': (3, 3), 'drop_out': 0.0, 'depth': 4}
+{'type': 'C', 'activation': 'relu', 'num_output': 128, 'kernel_size': (3, 3), 'stride': (1, 1), 'drop_out': 0.0, 'depth': 5, 'num_input': 64}
+{'type': 'FC', 'activation': 'relu', 'num_output': 20, 'drop_out': 8.3, 'depth': 6, 'num_input': 15488}
+{'type': 'FC', 'activation': 'relu', 'num_output': 10, 'drop_out': 0.0, 'depth': 7, 'num_input': 20}
+{'type': 'T', 'activation': None, 'depth': 8, 'num_input': 10, 'num_output': 2}
+built CNN
+{0, 1} 2
+i: 0 j: 20 nb: loss: 1.4675559 error rate: 0.165
+{0} 1
+i: 1 j: 20 nb: loss: 1.1538264 error rate: 0.158
+{0} 1
+i: 2 j: 20 nb: loss: 0.9572597 error rate: 0.158
+{0} 1
+i: 3 j: 20 nb: loss: 0.80231893 error rate: 0.158
+{0} 1
+i: 4 j: 20 nb: loss: 0.70916635 error rate: 0.158
+{0} 1
+i: 5 j: 20 nb: loss: 0.6453189 error rate: 0.158
+{0} 1
+i: 6 j: 20 nb: loss: 0.592079 error rate: 0.158
+{0} 1
+i: 7 j: 20 nb: loss: 0.53409153 error rate: 0.158
+{0} 1
+i: 8 j: 20 nb: loss: 0.49365908 error rate: 0.158
+{0, 1} 2
+i: 9 j: 20 nb: loss: 0.44991893 error rate: 0.14
+{0, 1} 2
+i: 10 j: 20 nb: loss: 0.42706192 error rate: 0.145
+{0, 1} 2
+i: 11 j: 20 nb: loss: 0.37734556 error rate: 0.124
+{0, 1} 2
+i: 12 j: 20 nb: loss: 0.34647036 error rate: 0.109
+{0, 1} 2
+i: 13 j: 20 nb: loss: 0.34538698 error rate: 0.112
+{0, 1} 2
+i: 14 j: 20 nb: loss: 0.34157985 error rate: 0.112
+{0, 1} 2
+i: 15 j: 20 nb: loss: 0.32139194 error rate: 0.107
+{0, 1} 2
+i: 16 j: 20 nb: loss: 0.3093766 error rate: 0.097
+{0, 1} 2
+i: 17 j: 20 nb: loss: 0.30197614 error rate: 0.09
+{0, 1} 2
+i: 18 j: 20 nb: loss: 0.30755088 error rate: 0.091
+{0, 1} 2
+i: 19 j: 20 nb: loss: 0.30935025 error rate: 0.102
+{0, 1} 2
+i: 20 j: 20 nb: loss: 0.2871366 error rate: 0.09
+{0, 1} 2
+i: 21 j: 20 nb: loss: 0.2965173 error rate: 0.095
+{0, 1} 2
+i: 22 j: 20 nb: loss: 0.29792932 error rate: 0.08
+{0, 1} 2
+i: 23 j: 20 nb: loss: 0.27711892 error rate: 0.087
+{0, 1} 2
+i: 24 j: 20 nb: loss: 0.2839014 error rate: 0.082
+{0, 1} 2
+i: 25 j: 20 nb: loss: 0.27014214 error rate: 0.086
+{0, 1} 2
+i: 26 j: 20 nb: loss: 0.2911033 error rate: 0.085
+{0, 1} 2
+i: 27 j: 20 nb: loss: 0.2827719 error rate: 0.076
+{0, 1} 2
+i: 28 j: 20 nb: loss: 0.28933826 error rate: 0.079
+{0, 1} 2
+i: 29 j: 20 nb: loss: 0.27790052 error rate: 0.075
+
+ training error_rate:  0.075
+{0, 1} 2
+test error: 0.09512044471896232
+[[1316   22]
+ [ 132  149]]
+
+
+              precision    recall  f1-score   support
+
+           0       0.91      0.98      0.94      1338
+           1       0.87      0.53      0.66       281
+
+    accuracy                           0.90      1619
+   macro avg       0.89      0.76      0.80      1619
+weighted avg       0.90      0.90      0.90      1619
+

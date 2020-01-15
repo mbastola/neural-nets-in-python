@@ -66,7 +66,7 @@ class CNN(object):
         self.fc_layers = []
         
         #hyper_params: [learning_rate, momentum, regularizer, decay_rate, epsilon]
-        #hyper_params are mutable utlizing set_params() method
+
         self.lr = lr
         self.mu = mu
         self.reg = reg
