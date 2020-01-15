@@ -1,10 +1,10 @@
 
 # Advanced Architecture: CNN3D
 
-In this repo, I extend my [CNN Advanced Architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture) project to 3D space. The architecture is advanced in the sense that it is flexible and can read & build its architecture from JSON files. The 3D extension allows CNN3D classifier to tackle 3D image tensors such as CT Scan images, which we will we working with in this repo. I have trained the LUNA16 dataset with the usual my CNN and then with CNN3D classes and noted that CNN3D outperfromed the predictions for the LUNA16 dataset.  
+In this repo, I extend my [CNN Advanced Architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture) project to 3D images. The architecture is advanced in the sense that it is flexible and can read & build its architecture from JSON files. The 3D extension allows CNN3D classifier to tackle 3D tensors used heavily in scientific/medical imaging such as CT Scan images, which we will we working with in this repo. I have trained the LUNA16 dataset with the usual my CNN and then with CNN3D classes and noted that CNN3D outperfromed the predictions for the LUNA16 dataset.  
 
 ## LUNA16
-LUng Nodule Analysis data includes 888 CT Scans of Lungs with Annotations around the possible cancer region. The annotations are provided by multiple radiologistss and the detections are in binary +ve and -ve classess with specified region of interest, thickness, etc. in the metadata files. The information about the dataset can be found [here](https://luna16.grand-challenge.org). 
+LUng Nodule Analysis data includes 888 CT Scans of Patient's Lungs with Annotations around the possible cancer region. The annotations are provided by multiple radiologists and the detections are in binary +ve and -ve classess with specified region of interest, thickness, etc. in the metadata files. The information about the dataset can be found [here](https://luna16.grand-challenge.org). 
 
 ## Data Exploration
 
