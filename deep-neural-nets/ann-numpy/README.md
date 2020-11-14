@@ -2,7 +2,7 @@
 
 ## MNIST:
 
-![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/mnist.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/mnist.png)
 
 Our numpy ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten digit MNIST dataset achieves test error of 4.4% (accuracy 95.6% !!). 
 
@@ -52,7 +52,7 @@ weighted avg       0.96      0.96      0.96       700
 
 ## CIFAR 10
 
-![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/cifar10.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/cifar10.png)
 
 
 For 10 class 3 channel images CIFAR dataset we try deeper archecture with 3 hidden layers of sizes 128, 64 and 32 nodes. The result is 53% which is not bad for a difficult image dataset. I've used CNNs to get down to 18% test error in my CNN folders. 
