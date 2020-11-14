@@ -1,12 +1,12 @@
-# Artifical neural network in Numpy
-
-In this repo, I build ANNs using basic numpy tools. This was an exercise in building ANN architectures from scratch and writing Backpropagation. 
+[This project](https://github.com/mbastola/neural-nets-in-python/tree/master/deep-neural-nets/ann-numpy) is an exercise in building ANN architectures from scratch and writing Backpropagation in numpy. 
 
 ## MNIST:
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/mnist.png)
+
 Our numpy ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten digit MNIST dataset achieves test error of 4.4% (accuracy 95.6% !!). 
 
-![png](imgs/ann1-mnist-errors.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/ann1-mnist-errors.png)
 
 *training_error_rate*
 
@@ -52,10 +52,13 @@ weighted avg       0.96      0.96      0.96       700
 
 ## CIFAR 10
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/cifar10.png)
+
+
 For 10 class 3 channel images CIFAR dataset we try deeper archecture with 3 hidden layers of sizes 128, 64 and 32 nodes. The result is 53% which is not bad for a difficult image dataset. I've used CNNs to get down to 18% test error in my CNN folders. 
 
 
-![png](imgs/ann1-cifar-errors.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/ann1-cifar-errors.png)
 
 *training_error_rate*
 
