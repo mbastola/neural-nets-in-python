@@ -1,14 +1,14 @@
-# Artifical neural network in TF
-
-In this repo, I build ANNs using tensorflow library as an extension to ann-numpy repo where I build ANN architecture from scratch in numpy. 
+In [this project](https://github.com/mbastola/neural-nets-in-python/tree/master/deep-neural-nets/ann-tensorflow), we build ANNs using tensorflow library as an extension to ann-numpy repo where I build ANN architecture from scratch in numpy. 
 
 ## MNIST:
 
-Our numpy ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten digit MNIST dataset achieves test error of 3.4% (accuracy 96.6% !!). 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/mnist.png)
 
-![png](imgs/ANN_mnist10.png)
+Our tensorflow ANN with 1 hidden layer with only 30 nodes on 10 classes handwritten digit MNIST dataset achieves test error of 3.4% (accuracy 96.6% !!). 
 
-*training_error_rate*
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-tensorflow/imgs/ANN_mnist10.png)
+
+**training_error_rate**
 
 final training error:  0.033
 
@@ -52,12 +52,14 @@ weighted avg       0.97      0.97      0.97       700
 
 ## CIFAR 10
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/cifar10.png)
+
 For 10 class 3 channel images CIFAR dataset we try deeper archecture with 3 hidden layers of sizes 128, 64 and 32 nodes. The test error is 61.3% which is a bit worse than using my numpy version with test error of 53.1%. I've used CNNs to get down to 18% test error in my CNN folders. 
 
 
-![png](imgs/ANN_cifar10.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-tensorflow/imgs/ANN_cifar10.png)
 
-*training_error_rate*
+**training_error_rate**
 
 
 final training error: 0.647

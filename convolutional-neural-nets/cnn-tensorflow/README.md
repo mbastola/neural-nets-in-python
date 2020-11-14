@@ -1,14 +1,13 @@
-
-# CNN Tensorflow
-
-In this repo, I implement CNN class using the tensorflow library. I compare the accuracies gained by the ConvPool layers to the ANN architectures of the [ANN-tensorflow](https://github.com/mbastola/neural-nets-in-python/tree/master/deep-neural-nets/ann-tensorflow) repo. We find that adding only 2 ConvPool layers before the ANN architecture does automated feature engineering and significantly increases the classification accuracies as compared to the ANN only architectures.
+[This project](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-tensorflow) implements CNN class using the tensorflow library. I compare the accuracies gained by the ConvPool layers to the ANN architectures of the [ANN-tensorflow](https://github.com/mbastola/neural-nets-in-python/tree/master/deep-neural-nets/ann-tensorflow) repo. We find that adding only 2 ConvPool layers before the ANN architecture does automated feature engineering and significantly increases the classification accuracies as compared to the ANN only architectures.
 
 
 ## MNIST:
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/mnist.png)
+
 Our tensorflow Ann with 1 hidden layer of size 30 had achieved test error of 3.4% (accuracy 96.6%) on the 10 classes handwritten digit MNIST dataset. Adding 2 ConvPool layer with convolutions params (20,5,5) & pooling of strides (1,1), followed by the ANN architecture, i.e. Fully connected layer with 1 hidden layer of 30,  achieves test error of 1% (accuracy 99% ), which is a 2.4% increment! Hence we see that a simple CNN built by adding 2 ConvPool layers to the ANN architecture is more expressive than just the ANN architecture alone for image based classification.
 
-![png](imgs/mnist.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-tensorflow/imgs/mnist.png)
 
 final training error:  0.015
 
@@ -51,10 +50,12 @@ weighted avg       0.99      0.99      0.99       700
 
 ## CIFAR 10
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/cifar10.png)
+
 For 10 class 3 channel images CIFAR dataset the ANN archecture with 3 hidden layers of sizes [128, 64,32] produced test error is 61.3% (accuracy 38.7%). For the same architecture, adding just 2 conv pool layers with convolutions params (20,5,5) & pooling of strides (1,1) reduced test error to 31.5% (accuracy 68.5%!). I've optimized my CNNs to get this down to 18% test error in my CNN advanced architecture repo. 
 
 
-![png](imgs/cifar10.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-tensorflow/imgs/cifar10.png)
 
 final training error:  0.317
 
