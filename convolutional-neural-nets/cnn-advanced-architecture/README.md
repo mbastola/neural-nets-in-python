@@ -1,6 +1,4 @@
-# CNN Advanced Architecture
-
-In this repo, I made advancements to the CNN class I worked in [cnn-learning-hyper-params](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) repo. The motivation is to be able to build a CNN class that is flexible to architecture changes. For example, the CNN class in this repo reads its architecture from Json object. For example,
+In [this project](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture), we make advancements to the CNN class we worked in my [cnn-learning-hyper-params](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) project. The motivation is to be able to build a CNN class that is flexible to architecture changes. For example, the CNN class in this repo reads its architecture from Json object. For example,
 
 
 	ARCH = [
@@ -27,9 +25,11 @@ Another motivation is to imporove on the Facial Recognition result from the [cnn
 
 ## FER2013 Binary
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/fer.png)
+
 Applying CNN with architecture defined by ARCH, the 2 class Facial Emotion FER2013 dataset result has significantly improved, decreasing test error from 36% to 13.6% leading to accuracy of 86.4%! 
 
-![png](imgs/Fer2013_binary.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture/imgs/Fer2013_binary.png)
 
 *Left: Losses, Right: training_error_rate*
 
@@ -58,7 +58,7 @@ Classification Report:
 Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER2013 dataset has test error of 41.7% (accuracy 58.22%). The leading Kaggle score for this dataset has accuracy of 69.7%. [link](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).
 
 
-![png](imgs/CNN_fer2013_1567816355.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture/imgs/CNN_fer2013_1567816355.png)
 
 *Left: Losses, Right: training_error_rate*
 
@@ -95,9 +95,11 @@ Classification Report:
 
 ## MNIST:
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/mnist.png)
+
 Applying CNN with architecture defined by ARCH, the 10 class handwritten digit MNIST dataset has test error of 1.2% (accuracy 98.8% !!). The leading score for this dataset has accuracy of 99.8% and looks like ARCH ranks around 46th! [link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html).
 
-![png](imgs/CNN_mnist.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture/imgs/CNN_mnist.png)
 
 *Left: Losses, Right: training_error_rate*
 
@@ -139,10 +141,12 @@ Classification Report:
 
 ## CIFAR 10
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/cifar10.png)
+
 Applying CNN with architecture defined by ARCH, the 10 class 3 channel images CIFAR dataset has test error of 18% (accuracy 88% !!). The leading score for this dataset has accuracy of 96.53% and looks like ARCH ranks around 34th! [link](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#43494641522d3130).
 
 
-![png](imgs/CNN_cifar10.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture/imgs/CNN_cifar10.png)
 
 *Left: Losses, Right: training_error_rate*
 
@@ -186,9 +190,11 @@ Classification Report:
 
 ## CIFAR 100
 
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/cifar100.png)
+
 Unfortunately performance of ARCH in 100 class CIFAR dataset was terrible (99.1%). The issue was non-convergence of the training error rate which can be seen below. The architecture needs modification here in order to account for an order of magnitude increase in labels which is going to be one of the datasets to tackle in "cnn-learning-architecture" topic. Stay tuned!
 
-![png](imgs/CNN_cifar100.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture/imgs/CNN_cifar100.png)
 
 *Left: Losses, Right: training_error_rate*
 

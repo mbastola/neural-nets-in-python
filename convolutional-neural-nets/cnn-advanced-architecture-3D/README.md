@@ -1,7 +1,5 @@
 
-# Advanced Architecture: CNN3D
-
-In this repo, I extend my [CNN Advanced Architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture) project to 3D images. The architecture is advanced in the sense that it is flexible and can read & build its architecture from JSON files. The 3D extension allows CNN3D classifier to tackle 3D tensors used heavily in scientific/medical imaging such as CT Scan images, which we will we working with in this repo. I have trained the LUNA16 dataset with the usual my CNN and then with CNN3D classes and noted that CNN3D outperfromed the predictions for the LUNA16 dataset.  
+In [this project](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture-3D), I extend my [CNN Advanced Architecture](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-advanced-architecture) project to 3D images. The architecture is advanced in the sense that it is flexible and can read & build its architecture from JSON files. The 3D extension allows CNN3D classifier to tackle 3D tensors used heavily in scientific/medical imaging such as CT Scan images, which we will we working with in this repo. I have trained the LUNA16 dataset with the usual my CNN and then with CNN3D classes and noted that CNN3D outperfromed the predictions for the LUNA16 dataset.  
 
 ## LUNA16
 LUng Nodule Analysis data includes 888 CT Scans of Patient's Lungs with Annotations around the possible cancer region. The annotations are provided by multiple radiologists and the detections are in binary +ve and -ve classess with specified region of interest, thickness, etc. in the metadata files. The information about the dataset can be found [here](https://luna16.grand-challenge.org). 
@@ -37,7 +35,7 @@ There are 130 slices of 512 sq pixel CTScan Image on the file above. The number 
 ```python
 plt.imshow(image[0],cmap='gray')
 ```
-![png](imgs/output_6_1.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/output_6_1.png)
 
 The first 12 slices are observed:
 
@@ -51,10 +49,10 @@ plt.show()
 ```
 
 
-![png](imgs/output_7_0.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/output_7_0.png)
 
 We can use matplotlib to plot all the 130 slices into 3d scatterplot:
-![png](imgs/output_5_0.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/output_5_0.png)
 
 
 Since the annotations are provided, we wont need the entire CTScan region. We compute the ROI,crop the images and output the final numpy array in ```CTSData.py```. The output can be observed: 
@@ -77,13 +75,13 @@ plt.show()
 ```
 
 
-![png](imgs/output_11_0.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/output_11_0.png)
 
 Below shows 2 +ve samples of Nodules in depth frames. Note that the Nodule appears & disappreas with the depth:
 
 <div>
-<img src="imgs/1.gif" width="200">
-<img src="imgs/5.gif" width="200">
+<img src="https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/1.gif" width="200">
+<img src="https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/5.gif" width="200">
 </div>
 
 
@@ -101,7 +99,7 @@ plt.show()
 ```
 
 
-![png](imgs/output_13_0.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/output_13_0.png)
 
 ## Classification Results:
 
@@ -123,7 +121,7 @@ archsm = [
 
 For the architecture above, the usual 2D CNN achieved the test accuracy of 90.6% (error 0.094). The recall, which we are the most interested in maximizing, was 78% for the positive class.   
 
-<img src="imgs/CNN_luna.png" width="400">
+<img src="https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/CNN_luna.png" width="400">
 
 ```
 final training error:  0.135
@@ -169,7 +167,7 @@ Using larger feature sizes in the CNN kernel (see below) the 2D CNN achieved imp
 
    
 
-<img src="imgs/CNN_luna1.png" width="400">
+<img src="https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/CNN_luna1.png" width="400">
 
 ```
 final training error:  0.074
@@ -222,7 +220,7 @@ We extend the ```archsm``` architecture above to 3D Conv & Pool kernels. Note th
 
 The arch3dsm improved the archsm test accuracy to 91.1% (error 0.089) while also improving the Recall to 85%. We see that for same CNN architecture, the 3D convpools minimized the FNR. The precison remaned the same. 
 
-<img src="imgs/CNN_luna3D2.png" width="400">
+<img src="https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-advanced-architecture-3D/imgs/CNN_luna3D2.png" width="400">
 
 ```
 final training error:  0.02666666666666667

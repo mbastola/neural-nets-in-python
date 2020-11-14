@@ -1,7 +1,5 @@
 
-# Learning CNN hyper-params
-
-In this project I test and improve vanilla CNN on facial expression data: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge. Here I only deal with two label classes: Happy and Angry. I utilize LazyProgrammer's (https://github.com/lazyprogrammer) vanilla CNN architecture along with Pandas and Sckit-learn to observe and improve the results. Mainly, Randomised Search for learning hyper_paramters such as learning_rate, momentum coefficient, etc and drop-out regularizer improved the default test prediction accuracy from 36% to 64%. This is a bit lower than 72% that we got from SVM trainer in https://github.com/mbastola/classical-machine-learning-in-python/tree/master/SVM/facial-expressions. However, we will continue in following projects to see if we can beat SVM modifying CNN architecutre itself.
+In [this project](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) we automate learning CNN hyper-params. We test and improve my previous tensorflow implementation of CNN in [here](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-tensorflow/) on [ Kaggle's facial expression dataset](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge). Here I only deal with two label classes: Happy and Angry. Randomized Search for learning hyper_paramters such as learning_rate, momentum coefficient, etc and drop-out regularizer improved the default test prediction accuracy from 36% to 64%. This is a bit lower than 72% that we got from our [SVM classifier](https://github.com/mbastola/classical-machine-learning-in-python/tree/master/SVM/facial-expressions). However, we will continue in following projects to see if we can beat SVM modifying CNN architecture itself.
 
 
 ```python
@@ -44,7 +42,7 @@ sns.countplot(x='emotion',data=df)
 
 
 
-![png](output_4_2.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-learning-hyper-params/output_4_2.png)
 
 
 We start out with applying CNN on two class labels:0 (Angry) and  3 (Happy)
@@ -71,7 +69,7 @@ sns.countplot(x=y)
 
 
 
-![png](output_6_1.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-learning-hyper-params/output_6_1.png)
 
 
 The parseCNNInput takes (N,k) array and converts it into (N,c,sqrt(k),sqrt(k)) matrix for CNN. In this process, the pixel values are scaled to 0-1. 
@@ -99,7 +97,7 @@ model = CNN(architecture_params=
 model.fit(X_train,y_train,batch_sz=30,epochs=3,debug=True)
 ```
 
-![png](output_11_1.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-learning-hyper-params/output_11_1.png)
 
 
 ```python
@@ -177,7 +175,7 @@ model.fit(X_train,y_train,batch_sz=30, epochs=6,debug=True)
     ('\nerror_rate: ', 0.231, ', params: ', {'mu': 0.945, 'eps': 0.001, 'lr': 0.0005, 'reg': 0.0005, 'decay': 0.9999945})
 
 
-![png](output_19_1.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-learning-hyper-params/output_19_1.png)
 
 
 
@@ -230,7 +228,7 @@ model_with_dropout_reg.fit(X_train,y_train,batch_sz=30,epochs=6,debug=True)
 
 
 
-![png](output_23_1.png)
+![png](https://github.com/mbastola/neural-nets-in-python/blob/master/convolutional-neural-nets/cnn-learning-hyper-params/output_23_1.png)
 
 
 
