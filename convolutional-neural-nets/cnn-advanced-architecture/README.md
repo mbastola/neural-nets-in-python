@@ -23,9 +23,12 @@ The goal is to utilize this dynamic architecture in my next repo [cnn-learning-a
 
 Another motivation is to imporove on the Facial Recognition result from the [cnn-learning-hyper-params](https://github.com/mbastola/neural-nets-in-python/tree/master/convolutional-neural-nets/cnn-learning-hyper-params) repo. There we were stuck with 36% test error for binary class FER2013 dataset. For the architecture above, we have improved on the dataset while also tested the result on MNIST and CIFAR.
 
-## FER2013 Binary
-
+## FER2013 
 ![png](https://github.com/mbastola/neural-nets-in-python/blob/master/deep-neural-nets/ann-numpy/imgs/fer.png)
+
+- Binary
+
+
 
 Applying CNN with architecture defined by ARCH, the 2 class Facial Emotion FER2013 dataset result has significantly improved, decreasing test error from 36% to 13.6% leading to accuracy of 86.4%! 
 
@@ -53,7 +56,7 @@ Classification Report:
 		macro avg       0.86      0.87      0.86       140
 		weighted avg       0.87      0.86      0.87       140
 
-## FER2013 7 classes
+- 7 classes
 
 Applying CNN with architecture defined by ARCH, the 7 class Facial Emotion FER2013 dataset has test error of 41.7% (accuracy 58.22%). The leading Kaggle score for this dataset has accuracy of 69.7%. [link](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).
 
