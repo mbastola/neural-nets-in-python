@@ -117,12 +117,6 @@ test_data = TranslationDataset(test_src_path, test_trg_path, en_text, de_text)
     Multi30k files already exist. Skipping download and processing.
 
 
-
-```python
-
-```
-
-
 ```python
 PAD_IDX = de_text.stoi[PAD_TOKEN]
 SOS_IDX = de_text.stoi[SOS_TOKEN]
@@ -434,8 +428,6 @@ model_summary(model)
 ### 5.1. Optimizer
 
 The paper specifies using the Adam optimizer with a custom learning rate schedule. The learning rate increases linearly for a set number of "warm-up" steps and then decreases proportionally to the inverse square root of the step number. This strategy, implemented in the `NoamOptim` class in the tutorial, helps to prevent instability in the early stages of training.
-
-$$ lr = d_{\text{model}}^{-0.5} \cdot \min(\text{step_num}^{-0.5}, \text{step_num} \cdot \text{warmup_steps}^{-1.5}) $$
 
 
 ```python
@@ -851,8 +843,3 @@ for example_idx in example_indices:
 ## 8. Conclusion
 
 In this notebook, we implementated of the Transformer model from scratch! By building each component—from scaled dot-product attention to the full encoder-decoder stack we gained a practical understanding of how self-attention replaces recurrence for sequence transduction tasks. The results on the Multi30k dataset demonstrate the model's capability, and the attention visualizations provide qualitative insight into its inner workings and serves as a strong baseline for further research into attention-based architectures..
-
-
-```python
-
-```

@@ -1,11 +1,3 @@
-# This script is a Python version of the "Attention Is All You Need" tutorial notebook.
-# It implements the Transformer model from scratch for an English-to-German machine translation task.
-
-# Required packages:
-# pip install spacy torch numpy matplotlib seaborn tqdm datasets
-# python -m spacy download en_core_web_sm
-# python -m spacy download de_core_news_sm
-
 import math
 import random
 import numpy as np
