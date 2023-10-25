@@ -1,0 +1,68 @@
+Train Score: 0.14 RMSE
+Test Score: 0.16 RMSE
+
+.13
+.17
+
+
+Train Score: 0.02 RMSE
+Test Score: 0.02 RMSE
+
+
+
+~/anaconda3/lib/python3.7/site-packages/statsmodels/tsa/arima_model.py in loglike(self, params, set_sigma2)
+    778         method = self.method
+    779         if method in ['mle', 'css-mle']:
+--> 780             return self.loglike_kalman(params, set_sigma2)
+    781         elif method == 'css':
+    782             return self.loglike_css(params, set_sigma2)
+
+~/anaconda3/lib/python3.7/site-packages/statsmodels/tsa/arima_model.py in loglike_kalman(self, params, set_sigma2)
+    788         Compute exact loglikelihood for ARMA(p,q) model by the Kalman Filter.
+    789         """
+--> 790         return KalmanFilter.loglike(params, self, set_sigma2)
+    791 
+    792     def loglike_css(self, params, set_sigma2=True):
+
+~/anaconda3/lib/python3.7/site-packages/statsmodels/tsa/kalmanf/kalmanfilter.py in loglike(cls, params, arma_model, set_sigma2)
+    647             loglike, sigma2 =  kalman_loglike.kalman_loglike_double(y, k,
+    648                                     k_ar, k_ma, k_lags, int(nobs), Z_mat,
+--> 649                                     R_mat, T_mat)
+    650         elif issubdtype(paramsdtype, np.complex128):
+    651             loglike, sigma2 =  kalman_loglike.kalman_loglike_complex(y, k,
+
+kalman_loglike.pyx in statsmodels.tsa.kalmanf.kalman_loglike.kalman_loglike_double()
+
+kalman_loglike.pyx in statsmodels.tsa.kalmanf.kalman_loglike.kalman_filter_double()
+
+~/anaconda3/lib/python3.7/site-packages/numpy/linalg/linalg.py in pinv(a, rcond)
+   1870         return wrap(res)
+   1871     a = a.conjugate()
+-> 1872     u, s, vt = svd(a, full_matrices=False)
+   1873 
+   1874     # discard small singular values
+
+~/anaconda3/lib/python3.7/site-packages/numpy/linalg/linalg.py in svd(a, full_matrices, compute_uv)
+   1560 
+   1561         signature = 'D->DdD' if isComplexType(t) else 'd->ddd'
+-> 1562         u, s, vh = gufunc(a, signature=signature, extobj=extobj)
+   1563         u = u.astype(result_t, copy=False)
+   1564         s = s.astype(_realType(result_t), copy=False)
+
+~/anaconda3/lib/python3.7/site-packages/numpy/linalg/linalg.py in _raise_linalgerror_svd_nonconvergence(err, flag)
+     96 
+     97 def _raise_linalgerror_svd_nonconvergence(err, flag):
+---> 98     raise LinAlgError("SVD did not converge")
+     99 
+    100 def _raise_linalgerror_lstsq(err, flag):
+
+LinAlgError: SVD did not converge
+
+
+The journey began about 7 months ago with me struggling to grasp the concepts. While I came across applications of robust methodologies to predict time series such as Kalman Filters, Non Linear KDE regressions, Ensemble methods and Radial Basis Functions, their limitations in long term forecasting were also pronounced.
+
+
+This is the third post in the series and period 3 implies chaos. I had forever wondered with all the triumphs in science, with technology to reach the moon and back, predict the spin of an electron correctly to 14 decimal places, why couldn't we predict if it were to rain on an afternoon? Then one day, I stumbled upon this lecture which argued chaos being is a prime example where reduction failed. RAS being amazing, I then started noticing concepts of chaos emerging everywhere, finally coming across some recent studies in chaotic models of the universe, which did it for me. From then on, I needed to know more. Hence, this blog will be a meditations in chaos. We will start out exploring what it means for things to be chaotic. We will test conventional methods to predict chaos, note their limitations and finally attempt to see if a class of neural networks with memory based learning units such as LSTMs can help predict behavior of some simple chaotic systems. 
+
+I've tried to simplify as much as I can but reduction may as well fail here. 
+
