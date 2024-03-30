@@ -1024,7 +1024,3 @@ Building the Transformer from its core components: the positional encoding, the 
 4.  **Hyperparameter Tuning**: The current hyperparameters were chosen arbitrarily. A systematic search (e.g., using Optuna or Ray Tune) would be necessary to find the optimal configuration.
 5.  **Beam Search**: Implementing beam search for decoding instead of the current greedy approach would likely improve translation quality.
 
-
-```python
-
-```
